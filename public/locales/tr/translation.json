@@ -1,0 +1,69 @@
+{
+    "drawer": {
+        "members": "Üyeler",
+        "accounting": "Muhasebe",
+        "ayahs": "Kuran Ayetleri",
+        "announcements": "Duyurular"
+    },
+    "labels": {
+        "member": "Üye",
+        "members": "Üyeler",
+        "delete": "Sil",
+        "openMenu": "Menüyü Aç",
+        "closeMenu": "Menüyü Kapat",
+        "language": "Dil",
+        "addMember": "Üye Ekle",
+        "importMembers": "Üyeleri İçe Aktar",
+        "deleteSelected": "Seçilenleri silmek istediğinize emin misiniz?",
+        "irreversibleAction": "Bu işlem geri alınamaz.",
+        "cancel": "İptal",
+        "selected": "Seçilen",
+        "list": "Liste",
+        "add": "Ekle",
+        "edit": "Düzenle",
+        "name": "İsim",
+        "birthday": "Doğum Tarihi",
+        "address": "Adres",
+        "city": "Şehir",
+        "zip": "Posta Kodu",
+        "email": "E-posta",
+        "phone": "Telefon",
+        "subscriptionAmount": "Aidat",
+        "save": "Kaydet",
+        "upload": "Yükle",
+        "copy": "Kopyala",
+        "incomes": "Gelirler",
+        "expenses": "Giderler",
+        "addCategory": "Kategori Ekle",
+        "surah": "Sure",
+        "ayah": "Ayet",
+        "addAyah": "Ayet Ekle",
+        "typeToSearch": "Aramak için yazın",
+        "noOptions": "Seçenek yok",
+        "turkish": "Türkçe",
+        "dutch": "Hollandaca",
+        "arabic": "Arapça",
+        "slide": "Slayt",
+        "preview": "Önizleme"
+    },
+    "columns": {
+        "name": "İsim",
+        "email": "E-posta",
+        "birthday": "Doğum Tarihi",
+        "address": "Adres",
+        "city": "Şehir",
+        "country": "Ülke",
+        "zip": "Posta Kodu",
+        "bank": "IBAN",
+        "amount": "Miktar",
+        "phone": "Telefon",
+        "memeberSince": "Üye Olduğu Tarih",
+        "actions": "İşlemler"
+    },
+    "placeholders": {
+        "search": "Ara..."
+    },
+    "snackbar": {
+        "success": "Başarılı işlem"
+    }
+}

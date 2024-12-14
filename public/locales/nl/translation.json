@@ -1,0 +1,69 @@
+{
+    "drawer": {
+        "members": "Leden",
+        "accounting": "Boekhouding",
+        "ayahs": "Koran Ayahs",
+        "announcements": "Aankondigingen"
+    },
+    "labels": {
+        "member": "Lid",
+        "members": "Leden",
+        "delete": "Verwijderen",
+        "openMenu": "Open menu",
+        "closeMenu": "Sluit menu",
+        "language": "Taal",
+        "addMember": "Voeg lid toe",
+        "importMembers": "Importeer leden",
+        "deleteSelected": "Geselecteerde verwijderen?",
+        "irreversibleAction": "Deze actie is onomkeerbaar.",
+        "cancel": "Annuleren",
+        "selected": "Geselecteerd",
+        "list": "Lijst",
+        "add": "Toevoegen",
+        "edit": "Bewerken",
+        "name": "Naam",
+        "birthday": "Geboortedatum",
+        "address": "Adres",
+        "city": "Stad",
+        "zip": "Postcode",
+        "email": "E-mail",
+        "phone": "Telefoon",
+        "subscriptionAmount": "Contributie",
+        "save": "Opslaan",
+        "upload": "Upload",
+        "copy": "Kopiëren",
+        "incomes": "Inkomsten",
+        "expenses": "Uitgaven",
+        "addCategory": "Categorie toevoegen",
+        "surah": "Surah",
+        "ayah": "Ayah",
+        "addAyah": "Ayah toevoegen",
+        "typeToSearch": "Typ om te zoeken",
+        "noOptions": "Geen opties",
+        "turkish": "Turks",
+        "dutch": "Nederlands",
+        "arabic": "Arabisch",
+        "slide": "Dia",
+        "preview": "Voorbeeld"
+    },
+    "columns": {
+        "name": "Naam",
+        "email": "E-mail",
+        "birthday": "Geboortedatum",
+        "address": "Adres",
+        "city": "Stad",
+        "country": "Land",
+        "zip": "Postcode",
+        "bank": "IBAN",
+        "amount": "Bedrag",
+        "phone": "Telefoon",
+        "memeberSince": "Lid sinds",
+        "actions": "Acties"
+    },
+    "placeholders": {
+        "search": "Zoeken..."
+    },
+    "snackbar": {
+        "success": "Sucesvol verwerkt"
+    }
+}
