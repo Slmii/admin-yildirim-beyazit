@@ -4,7 +4,6 @@ export const useFormat = () => {
 	const { i18n } = useTranslation();
 
 	const locale = `${i18n.language}-${i18n.language.toUpperCase()}`;
-	console.log(i18n.language);
 
 	const toReadableCurrency = (value: string | number) => {
 		return new Intl.NumberFormat(locale, {

@@ -8,7 +8,7 @@ i18n.use(HttpBackend)
 	.use(initReactI18next) // bind react-i18next to the instance
 	// init i18next
 	.init({
-		lng: 'nl',
+		lng: 'tr',
 		debug: true,
 		locales: ['nl', 'tr'],
 		backend: {
