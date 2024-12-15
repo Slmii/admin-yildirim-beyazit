@@ -8,8 +8,9 @@ i18n.use(HttpBackend)
 	.use(initReactI18next) // bind react-i18next to the instance
 	// init i18next
 	.init({
+		lng: 'nl',
 		debug: true,
-		fallbackLng: 'nl',
+		locales: ['nl', 'tr'],
 		backend: {
 			loadPath: '/locales/{{lng}}/translation.json'
 		},
