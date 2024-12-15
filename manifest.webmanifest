@@ -1,0 +1,20 @@
+{
+	"name": "Yildirim Beyazit Camii",
+	"short_name": "Yildirim Beyazit Camii",
+	"start_url": "/",
+	"background_color": "#121212",
+	"theme_color": "#ED1B25",
+	"display": "standalone",
+	"icons": [
+		{
+			"src": "/icons/android-chrome-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "/icons/android-chrome-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	]
+}
