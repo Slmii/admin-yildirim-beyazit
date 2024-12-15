@@ -10,6 +10,9 @@ export default defineConfig({
 			'@': path.resolve('./src')
 		}
 	},
+	define: {
+		__APP_ENV__: process.env.VITE_VERCEL_ENV
+	},
 	base: './'
 	// server: { host: '127.0.0.1', port: 81 }
 });

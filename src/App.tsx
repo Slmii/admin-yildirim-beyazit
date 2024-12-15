@@ -7,9 +7,18 @@ import { MemberForm } from '@/pages/Members/MemberForm.component';
 import { MembersList } from '@/pages/Members/MembersList.component';
 import { QuranArayhsList } from '@/pages/QuranAyahs/QuranAyahsList.component';
 import { SignInPage } from '@/pages/SignIn.page';
+import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { BrowserRouter, Navigate, Outlet, Route, Routes } from 'react-router';
 
 function App() {
+	const { i18n } = useTranslation();
+
+	useEffect(() => {
+		// Set HTML language
+		document.documentElement.lang = i18n.language;
+	}, [i18n.language]);
+
 	return (
 		<BrowserRouter>
 			<Routes>
