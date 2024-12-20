@@ -27,7 +27,7 @@ export const useGetQuranAyahs = () => {
 		queryKey: quranAyahKeys.ayahs(),
 		enabled: !!session,
 		queryFn: async () => {
-			const response = await fetch(`${env.VITE_API_URL}/ayahs`, {
+			const response = await fetch(`${env.VITE_API_URL}/ayahs/admin`, {
 				headers: {
 					'Content-Type': 'application/json',
 					Authorization: `Bearer ${await session?.getToken()}`
