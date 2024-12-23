@@ -44,7 +44,8 @@
         "dutch": "Hollandaca",
         "arabic": "Arapça",
         "slide": "Slayt",
-        "preview": "Önizleme"
+        "preview": "Önizleme",
+        "completeSurah": "Sureyi tamamen göster"
     },
     "columns": {
         "name": "İsim",

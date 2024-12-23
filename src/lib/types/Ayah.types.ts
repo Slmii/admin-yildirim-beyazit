@@ -7,6 +7,19 @@ export interface ApiSurah {
 	revelationType: string;
 }
 
+export interface ApiSingleSurah {
+	number: number;
+	name: string;
+	englishName: string;
+	englishNameTranslation: string;
+	numberOfAyahs: number;
+	revelationType: string;
+	ayahs: {
+		number: number;
+		text: string;
+	}[];
+}
+
 export interface ApiAyah {
 	number: number;
 	text: string;
@@ -16,6 +29,7 @@ export interface ApiAyah {
 export interface AddQuranAyah {
 	ayah: number;
 	surah: number;
+	completeSurah: boolean;
 }
 
 export enum QuranAyahPreviewLanguageEnum {
@@ -30,6 +44,7 @@ export interface QuranAyah {
 	ayah: number;
 	language: string;
 	order: number;
+	completeSurah: boolean;
 	createdAt: Date;
 	updatedAt: Date;
 }

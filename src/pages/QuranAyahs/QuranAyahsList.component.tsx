@@ -10,7 +10,7 @@ import { quranAyahKeys, useAddQuranAyahs, useGetQuranAyahs, useGetSurahs } from 
 import { useIsMutating } from '@tanstack/react-query';
 
 export interface AddQuranAyahForm {
-	ayahs: { ayah: string; surah: string }[];
+	ayahs: { ayah: string; surah: string; completeSurah: boolean }[];
 }
 
 export const QuranArayhsList = () => {
@@ -18,7 +18,13 @@ export const QuranArayhsList = () => {
 	const { mutateAsync } = useAddQuranAyahs();
 
 	const handleOnAction = async (data: AddQuranAyahForm) => {
-		await mutateAsync(data.ayahs.map(ayah => ({ ayah: Number(ayah.ayah), surah: Number(ayah.surah) })));
+		await mutateAsync(
+			data.ayahs.map(ayah => ({
+				ayah: Number(ayah.ayah),
+				surah: Number(ayah.surah),
+				completeSurah: ayah.completeSurah
+			}))
+		);
 	};
 
 	const isLoaded = !!data && !isLoading;
@@ -31,8 +37,12 @@ export const QuranArayhsList = () => {
 			onAction={handleOnAction}
 			defaultValues={{
 				ayahs: data?.length
-					? data.map(quranAyah => ({ ayah: quranAyah.ayah.toString(), surah: quranAyah.surah.toString() }))
-					: [{ ayah: '', surah: '' }]
+					? data.map(quranAyah => ({
+							ayah: quranAyah.ayah.toString(),
+							surah: quranAyah.surah.toString(),
+							completeSurah: quranAyah.completeSurah
+						}))
+					: [{ ayah: '', surah: '', completeSurah: false }]
 			}}
 			schema={ayahFormSchema}
 		>
@@ -58,7 +68,7 @@ const Surahs = () => {
 					startIcon='add'
 					color='secondary'
 					sx={{ ml: 'auto' }}
-					onClick={() => append({ ayah: '', surah: '' })}
+					onClick={() => append({ ayah: '', surah: '', completeSurah: false })}
 					disabled={!!isMutatingQuranAyahs}
 				>
 					{t('labels.addAyah')}
@@ -77,7 +87,7 @@ const Surahs = () => {
 						remove(index);
 
 						if (fields.length === 1) {
-							append({ ayah: '', surah: '' });
+							append({ ayah: '', surah: '', completeSurah: false });
 						}
 					}}
 				/>

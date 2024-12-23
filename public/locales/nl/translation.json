@@ -44,7 +44,8 @@
         "dutch": "Nederlands",
         "arabic": "Arabisch",
         "slide": "Dia",
-        "preview": "Voorbeeld"
+        "preview": "Voorbeeld",
+        "completeSurah": "Volledige Surah weergeven"
     },
     "columns": {
         "name": "Naam",

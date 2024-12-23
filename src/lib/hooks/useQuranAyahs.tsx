@@ -1,7 +1,14 @@
 import { ErrorSnackbar } from '@/components/Snackbar/ErrorSnackbar.component';
 import { env } from '@/lib/env';
 import { useSnackbar } from '@/lib/providers/Snackbar.provider';
-import { AddQuranAyah, ApiAyah, ApiSurah, QuranAyah, QuranAyahPreviewLanguageEnum } from '@/lib/types/Ayah.types';
+import {
+	AddQuranAyah,
+	ApiAyah,
+	ApiSingleSurah,
+	ApiSurah,
+	QuranAyah,
+	QuranAyahPreviewLanguageEnum
+} from '@/lib/types/Ayah.types';
 import { CustomUseQueryOptions } from '@/lib/types/Query';
 import { responseHandling } from '@/lib/utils/fetch-response-handling';
 import { useClerk } from '@clerk/clerk-react';
@@ -11,10 +18,15 @@ import { useTranslation } from 'react-i18next';
 export const quranAyahKeys = {
 	ayahs: () => ['ayahs'],
 	surahs: () => ['surahs'],
-	preview: (surah: number, ayah: number, language: QuranAyahPreviewLanguageEnum) => [
+	previewAyah: (surah: number, ayah: number, language: QuranAyahPreviewLanguageEnum) => [
 		...quranAyahKeys.surahs(),
 		surah,
 		ayah,
+		language
+	],
+	previewSurah: (surah: number, language: QuranAyahPreviewLanguageEnum) => [
+		...quranAyahKeys.surahs(),
+		surah,
 		language
 	],
 	add: () => [...quranAyahKeys.ayahs(), 'add']
@@ -67,11 +79,34 @@ export const useGetAyahPreview = (
 	const { session } = useClerk();
 
 	return useQuery({
-		queryKey: quranAyahKeys.preview(surah, ayah, previewLanguage),
+		queryKey: quranAyahKeys.previewAyah(surah, ayah, previewLanguage),
 		enabled: !!session,
 		queryFn: async () => {
 			const response = await fetch(`https://api.alquran.cloud/v1/ayah/${surah}:${ayah}/${previewLanguage}`);
 			return (await response.json()).data as ApiAyah;
+		},
+		...options
+	});
+};
+
+export const useGetSurahPreview = (
+	{
+		surah,
+		previewLanguage
+	}: {
+		surah: number;
+		previewLanguage: QuranAyahPreviewLanguageEnum;
+	},
+	options?: CustomUseQueryOptions<ApiSingleSurah>
+) => {
+	const { session } = useClerk();
+
+	return useQuery({
+		queryKey: quranAyahKeys.previewSurah(surah, previewLanguage),
+		enabled: !!session,
+		queryFn: async () => {
+			const response = await fetch(`https://api.alquran.cloud/v1/surah/${surah}/${previewLanguage}`);
+			return (await response.json()).data as ApiSingleSurah;
 		},
 		...options
 	});
