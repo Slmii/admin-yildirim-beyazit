@@ -4,7 +4,7 @@ export const ayahFormSchema = z.object({
 	ayahs: z.array(
 		z
 			.object({
-				surah: z.string({ required_error: 'Selecteer een Surah' }),
+				surah: z.string({ required_error: 'Selecteer een Surah' }).min(1, 'Selecteer een Surah'),
 				ayah: z.string({ required_error: 'Selecteer een Ayah' }),
 				completeSurah: z.boolean()
 			})
