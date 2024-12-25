@@ -39,7 +39,7 @@ export const QuranAyahCard = ({
 
 	return (
 		<Paper elevation={0} sx={{ p: 2, display: 'flex', flexDirection: 'column', gap: 4 }}>
-			<Stack gap={1}>
+			<Stack gap={2}>
 				<Checkbox
 					label={t('labels.completeSurah')}
 					name={`ayahs.${index}.completeSurah`}
