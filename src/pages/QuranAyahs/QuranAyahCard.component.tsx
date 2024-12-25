@@ -8,7 +8,6 @@ import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import { FLAG_URL } from '@/lib/constants/shared.constants';
 import Skeleton from '@mui/material/Skeleton';
-import Divider from '@mui/material/Divider';
 import { useTranslation } from 'react-i18next';
 import { ApiSurah, QuranAyahPreviewLanguageEnum } from '@/lib/types/Ayah.types';
 import { AddQuranAyahForm } from './QuranAyahsList.component';
@@ -139,7 +138,7 @@ const Preview = ({ index }: { index: number }) => {
 	const isPending = (isAyahEnabled ? isAyahPending : false) || (isSurahEnabled ? isSurahPending : false);
 
 	return (
-		<Stack gap={2}>
+		<Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', gap: 3 }}>
 			<Stack direction='row' gap={2} alignItems='center'>
 				<Typography variant='body1'>{t('labels.preview')}:</Typography>
 				<Button
@@ -164,7 +163,6 @@ const Preview = ({ index }: { index: number }) => {
 					{t('labels.arabic')}
 				</Button>
 			</Stack>
-			<Divider />
 			<Stack gap={1}>
 				<Header>{isPending ? <Skeleton variant='text' width={200} /> : data?.name}</Header>
 				<Typography variant='body1'>
@@ -181,6 +179,6 @@ const Preview = ({ index }: { index: number }) => {
 					{isPending ? <Skeleton variant='text' width={25} /> : <>{data?.verse}</>}
 				</Typography>
 			</Stack>
-		</Stack>
+		</Paper>
 	);
 };
